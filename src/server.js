@@ -19,11 +19,14 @@ const register=({data})=>{
 
     const val=uuidv4();
     IMAGE_CACHE[val]=data
+    return val;
 
 }
 
 const getFromCache=({uuid})=>{
-    return IMAGE_CACHE[uuid];
+    const val=IMAGE_CACHE[uuid];
+    delete IMAGE_CACHE[uuid]
+    return val;
 }
 
 
@@ -31,7 +34,21 @@ app.get('/', (req, res) => {
 
     res.send('Hello World!')
 })
-  
+
+app.post('/reg', (req, res) => {    
+    res.send(register({data:req.body}))
+})
+
+app.get('/image/:uuid', (req, res) => {  
+    const uuid = req.params.uuid;
+    const sampleData=getFromCache({uuid});
+    EChartsServivce({req,res,sampleData})
+    
+})
+
+
+
+
 app.post('/', (req, res) => {
     
     EChartsServivce({req,res,sampleData:req.body})
