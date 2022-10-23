@@ -4,6 +4,7 @@ const express = require('express')
 const sampecharts = require('./sample-charts')
 const echartsservice=require('./echarts-service')
 const errorImageService=require('./error-image')
+const base64 = require('base-64');
 const {SampleChartServivce}=sampecharts;
 const {EChartsServivce}=echartsservice
 const {ErrorImage} = errorImageService
@@ -50,7 +51,17 @@ app.get('/image/:uuid', (req, res) => {
     
 })
 
-
+app.get('/base64img/:base64json', (req, res) => {  
+    try{
+        const base64json = req.params.base64json;
+        const decodedData = base64.decode(base64json);
+        const sampleData=JSON.parse(decodedData)
+        EChartsServivce({req,res,sampleData})
+    }catch(error){
+        ErrorImage({req,res,text:error})
+    }
+    
+})
 
 
 app.post('/', (req, res) => {
