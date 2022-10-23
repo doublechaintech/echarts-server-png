@@ -42,6 +42,9 @@ app.post('/reg', (req, res) => {
 app.get('/image/:uuid', (req, res) => {  
     const uuid = req.params.uuid;
     const sampleData=getFromCache({uuid});
+    if(!sampleData){
+        ErrorImage({req,res,text:"图片已经取走\n参考("+uuid+")"})
+    }
     EChartsServivce({req,res,sampleData})
     
 })
