@@ -1,0 +1,62 @@
+{
+    "width":800,"height":600,
+    "options": {
+        "legend": {
+            "orient": "vertical",
+            "left": "left",
+            "textStyle": {
+                "color": "#fff"
+            }
+        },
+        "tooltip": {
+            "trigger": "item"
+        },
+        "grid": {
+            "bottom": "3%",
+            "right": "4%",
+            "left": "3%",
+            "containLabel": true
+        },
+        "series": [
+            {
+                "data": [
+                    {
+                        "name": "集装格",
+                        "value": 430
+                    },
+                    {
+                        "name": "托盘",
+                        "value": 22
+                    },
+                    {
+                        "name": "生物容器",
+                        "value": 72
+                    },
+                    {
+                        "name": "气瓶",
+                        "value": 24456
+                    },
+                    {
+                        "name": "杜瓦",
+                        "value": 675
+                    }
+                ],
+                "center": [
+                    "60%",
+                    "50%"
+                ],
+                "label": {
+                    "normal": {
+                        "borderColor": "red",
+                        "color": "#fff",
+                        "formatter": "{b}:  {c}\n\r({d}%)"
+                    }
+                },
+                "type": "pie",
+                "name": "Access From",
+                "radius": "50%"
+            }
+        ]
+    },
+    "title": "资产一览表"
+}
