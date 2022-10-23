@@ -44,6 +44,7 @@ app.get('/image/:uuid', (req, res) => {
     const sampleData=getFromCache({uuid});
     if(!sampleData){
         ErrorImage({req,res,text:"图片已经取走\n参考("+uuid+")"})
+        return;
     }
     EChartsServivce({req,res,sampleData})
     
