@@ -1,19 +1,17 @@
-var echarts = require('echarts');
+const echarts = require('echarts');
 const { createCanvas } = require('canvas');
 const fs = require('fs');
 
 // In versions ealier than 5.3.0, you had to register the canvas factory with setCanvasCreator.
 // Not necessary since 5.3.0
 
+// You can use only the renderers you need
+//echarts.use([SVGRenderer, CanvasRenderer]);
 
 const canvas = createCanvas(800, 600);
 // ECharts can use the Canvas instance created by node-canvas as a container directly
-const chart = echarts.init(canvas);
-
-// setOption as normal
-chart.setOption(
-
-
+const chart = echarts.init(canvas,null,{renderer:'png'}); //svg DOES NOT WORK
+const option=
 {
     xAxis: {
       type: "category",
@@ -29,11 +27,8 @@ chart.setOption(
       }
     ]
   }
-
-
-
-
-);
+// setOption as normal
+chart.setOption(option);
 
 // Output the PNG image via Response
 //res.writeHead(200, {
