@@ -11,6 +11,20 @@ const app = express()
 const port = 3000
 app.use(express.json())
 console.log(sampecharts)
+const { v4: uuidv4 } = require('uuid');
+
+const IMAGE_CACHE=[];
+
+const register=({data})=>{
+
+    const val=uuidv4();
+    IMAGE_CACHE[val]=data
+
+}
+
+const getFromCache=({uuid})=>{
+    return IMAGE_CACHE[uuid];
+}
 
 
 app.get('/', (req, res) => {
