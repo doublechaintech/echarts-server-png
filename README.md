@@ -17,3 +17,9 @@ sample-data.json是一个文件。位于test目录下
   
 * 取回图片 curl  http://localhost:3000/image/0699d631-499d-4e90-beee-35ea4f06a781  -o newimage.png
 
+## 3D图表的支持
+
+```
+yarn add echarts-gl
+```
+没有window对象，不工作

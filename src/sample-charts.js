@@ -12,7 +12,7 @@ const sampleData = {
       "type": "category", "axisLabel": { "textStyle": { "color": "#fff" } },
       "axisLine": { "lineStyle": { "color": "#fff" } }
     }, 
-    "legend": { "icon": "circle", "textStyle": { "color": "#fff" } }, 
+    "legend": { "icon": "circle", "axisLabel": { "color": "#fff" } }, 
     "yAxis": { "type": "value", "axisLabel": { "show": true, "textStyle": { "color": "#fff" } }, "axisLine": { "lineStyle": { "color": "#fff" } } }, "grid": { "bottom": "3%", "right": "4%", "top": "10%", "left": "3%", "containLabel": true }, "series": [{ "data": [332, 193, 511, 249, 207, 87, 163], "color": "#ffc107", "type": "bar", "name": "上周" }, { "data": [422, 193, 429, 270, 0, 0, 0], "color": "#DD686E", "type": "bar", "name": "本周" }]
   }
 }
